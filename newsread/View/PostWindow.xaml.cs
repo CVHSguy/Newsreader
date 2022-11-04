@@ -16,13 +16,14 @@ using System.Windows.Shapes;
 namespace newsread.View
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for PostWindow.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class PostWindow : UserControl
     {
-        public UserControl1()
+        public PostWindow()
         {
             InitializeComponent();
         }
+
     }
 }

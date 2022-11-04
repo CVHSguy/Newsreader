@@ -19,8 +19,8 @@ namespace newsread.ViewModel
         private StreamReader sr;
         private static StreamWriter sw;
         string message = "";
-        private String SelectedItem = "";
-        private String articleNumber = "";
+        private string SelectedItem = "";
+        private string articleNumber = "";
         public ObservableCollection<string> list;
 
         private SocketSingleton()
@@ -42,7 +42,7 @@ namespace newsread.ViewModel
         {
             SelectedItem = selectedItem;
         }
-        public String getSelectedGroup()
+        public string getSelectedGroup()
         {
             return SelectedItem;
         }
@@ -63,7 +63,7 @@ namespace newsread.ViewModel
         }
         public void Writer(string input)
         {
-            sw.WriteLine(input);
+            sw?.WriteLine(input);
             Console.WriteLine("input: "+input);
         }
 
@@ -71,19 +71,16 @@ namespace newsread.ViewModel
         {
             //just a simple boolean to break the loop if the end of the stream is found
             bool loopbreaker = true;
-            var removeOkLine = sr?.ReadLine();
-
-            //creating a new instance of the list that we esnd the read lines into
+            //creating a new instance of the list that we send the read lines into
             list = new ObservableCollection<string>();
-
             //sending the input to the writer method, which writes to the client
             Writer(input);
-
+            //var removeOkLine = sr?.ReadLine();
             while (loopbreaker)
             {
                 //each loop we assign the read line from the stream to the string streamline
-               string streamline = sr.ReadLine();
-               if (streamline is ".")
+                string streamline = sr?.ReadLine();
+                if (streamline is ".")
                 {
                     loopbreaker = false;
                 }
