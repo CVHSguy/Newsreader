@@ -25,5 +25,10 @@ namespace newsread.View
             InitializeComponent();
 
         }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

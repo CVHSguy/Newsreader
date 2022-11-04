@@ -16,7 +16,5 @@ namespace newsread.Model
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(memberName));
         }
-
-
     }
 }

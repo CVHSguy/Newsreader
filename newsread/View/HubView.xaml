@@ -4,10 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:newsread.View"
-             mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="600">
-    <Grid Margin="0,0,0,-6" Height="390" Background="White">
-        <Button Content="Button" HorizontalAlignment="Left" Margin="278,195,0,0" VerticalAlignment="Top"/>
 
+             MinHeight="600" MinWidth="800">
+    <Grid Background="White" MinWidth="800" MinHeight="600">
+        <Button Content="Articles" Command="{Binding ArticleCMD}"  HorizontalAlignment="Left" Margin="220,130,0,0" VerticalAlignment="Top" Height="20" Width="74"/>
+
+        <Button Content="Read" HorizontalAlignment="Left" Margin="36,19,0,0" VerticalAlignment="Top" Height="38" Width="62"/>
+        <Button Content="Refresh" HorizontalAlignment="Left" Margin="100,19,0,0" VerticalAlignment="Top" Height="38" Width="62"/>
+        
+        <Button Content="All groups" Command="{Binding GroupsCMD}" HorizontalAlignment="Left" Margin="294,130,0,0" VerticalAlignment="Top" Height="20" Width="74"/>
     </Grid>
 </UserControl>
