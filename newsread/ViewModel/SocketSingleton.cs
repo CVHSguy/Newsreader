@@ -50,7 +50,7 @@ namespace newsread.ViewModel
         {
             articleNumber = selectedItem;
         }
-        public String getSelectedGroup()
+        public String getSelectedArticle()
         {
             return articleNumber;
         }
