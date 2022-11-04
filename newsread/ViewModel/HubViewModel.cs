@@ -1,4 +1,5 @@
-﻿using System;
+﻿using newsread.View;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -82,8 +83,8 @@ namespace newsread.ViewModel
         public ICommand ReadCMD { get; set; }
         public ICommand SearchCMD { get; set; }
         public ICommand ResetSearchCMD { get; set; }
-        public ICommand PostCMD { get; set; }
-
+        public ICommand PostCMD { get; set; } = new DelegateCommand(() => { ((App)App.Current).ChangeControl(typeof(PostWindow)); });
+        
         public void ArticleSelection()
         {
             Console.WriteLine("yo "+Searchbar);

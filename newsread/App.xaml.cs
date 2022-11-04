@@ -10,6 +10,7 @@ using System.Reflection;
 using System.Globalization;
 using System.Windows.Controls;
 using newsread.ViewModel;
+using newsread.View;
 
 namespace newsread
 {
@@ -24,6 +25,8 @@ namespace newsread
         {
             ServiceContainer.Register<HubViewModel>(() => new HubViewModel());
             ServiceContainer.Register<LoginViewModel>(() => new LoginViewModel());
+            ServiceContainer.Register<PostWindow>(() => new PostWindow());
+            ServiceContainer.Register<HubView>(() => new HubView());
         }
 
         public void ChangeControl(Type viewModelType)
