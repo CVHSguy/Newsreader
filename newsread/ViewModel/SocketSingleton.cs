@@ -19,6 +19,8 @@ namespace newsread.ViewModel
         private StreamReader sr;
         private static StreamWriter sw;
         string message = "";
+        private String SelectedItem = "";
+        private String articleNumber = "";
         public ObservableCollection<string> list;
 
         private SocketSingleton()
@@ -36,6 +38,23 @@ namespace newsread.ViewModel
             ns.Flush();
             
         }
+        public void setSelectedGroup(string selectedItem)
+        {
+            SelectedItem = selectedItem;
+        }
+        public String getSelectedGroup()
+        {
+            return SelectedItem;
+        }
+        public void setSelectedArticle(string selectedItem)
+        {
+            articleNumber = selectedItem;
+        }
+        public String getSelectedGroup()
+        {
+            return articleNumber;
+        }
+
 
         public string Reader()
         {

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using newsread.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,15 +22,26 @@ namespace newsread.View
     /// </summary>
     public partial class HubView : UserControl
     {
+        SocketSingleton Connection = SocketSingleton.getInstance();
         public HubView()
         {
+            DataContext = this;
+
             InitializeComponent();
 
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ListBoxSelection(object sender, SelectionChangedEventArgs e)
         {
+            //ripped from mr marpond
+            if (sender is not ListBox listBox)
+            {
+                return;
+            }
 
+            var selecteditem = listBox.SelectedItem + "";
+            //pass off the selected item to the singleton
+            Connection.setSelectedGroup(selecteditem+"");
         }
     }
 }

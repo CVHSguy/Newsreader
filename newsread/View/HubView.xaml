@@ -7,11 +7,32 @@
 
              MinHeight="600" MinWidth="800">
     <Grid Background="White" MinWidth="800" MinHeight="600">
-        <Button Content="Articles" Command="{Binding ArticleCMD}"  HorizontalAlignment="Left" Margin="220,130,0,0" VerticalAlignment="Top" Height="20" Width="74"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="52*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="443*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="102*"/>
+            <ColumnDefinition Width="295*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Articles" Command="{Binding ArticleCMD}"  HorizontalAlignment="Left" VerticalAlignment="Center" Height="20" Width="74" Grid.Column="1" Grid.Row="2"/>
 
-        <Button Content="Read" HorizontalAlignment="Left" Margin="36,19,0,0" VerticalAlignment="Top" Height="38" Width="62"/>
-        <Button Content="Refresh" HorizontalAlignment="Left" Margin="100,19,0,0" VerticalAlignment="Top" Height="38" Width="62"/>
-        
-        <Button Content="All groups" Command="{Binding GroupsCMD}" HorizontalAlignment="Left" Margin="294,130,0,0" VerticalAlignment="Top" Height="20" Width="74"/>
+        <Button Content="Read" HorizontalAlignment="Left" VerticalAlignment="Center" Height="52" Width="79" Grid.Column="1" Grid.Row="1"/>
+        <Button Content="Refresh" HorizontalAlignment="Left" Margin="79,0,0,0" VerticalAlignment="Center" Height="52" Width="79" Grid.Column="1" Grid.Row="1"/>
+
+        <Button Content="All groups" Command="{Binding GroupsCMD}" HorizontalAlignment="Left" Margin="74,0,0,0" VerticalAlignment="Center" Height="20" Width="74" Grid.Column="1" Grid.Row="2" RenderTransformOrigin="0.886,0.427"/>
+        <ListBox x:Name="ListBox" ItemsSource="{Binding ID}" Grid.Row="3" Grid.Column="1" SelectionChanged="ListBoxSelection"/>
+        <ListBox ItemsSource="{Binding SavedOrFavoriteGrps}" Grid.Row="3"/>
+        <TextBox Grid.Row="2" x:Name="Searchbar" Grid.Column="1" Margin="148,0,238,0" />
+        <TextBox Grid.Row="2" x:Name="Searchbar_Copy"/>
+        <Button Content="Save group" HorizontalAlignment="Left" Margin="158,0,0,0" VerticalAlignment="Center" Height="52" Width="79" Grid.Column="1" Grid.Row="1"/>
+        <Button Content="Post" HorizontalAlignment="Left" Margin="316,0,0,0" VerticalAlignment="Center" Height="52" Width="79" Grid.Column="1" Grid.Row="1"/>
+        <Button Content="Saved groups" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20" Width="102" Grid.Row="1"/>
+        <Button Content="Favorite groups" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20" Width="102" Grid.Row="1" Margin="102,0,0,0"/>
+        <Button Content="Subscribe" Command="{Binding SubscribeCMD}" HorizontalAlignment="Left" Margin="237,0,0,0" VerticalAlignment="Center" Height="52" Width="79" Grid.Column="1" Grid.Row="1"/>
     </Grid>
 </UserControl>
