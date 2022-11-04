@@ -69,9 +69,7 @@ namespace newsread.ViewModel
         } 
         public void Subscribe()
         {
-            string
-            SaveGrp = new ObservableCollection<string>(Connection.listFiller(""))
-
+            
 
         }
     }
