@@ -41,7 +41,60 @@ namespace newsread.View
 
             var selecteditem = listBox.SelectedItem + "";
             //pass off the selected item to the singleton
-            Connection.setSelectedGroup(selecteditem+"");
+            Connection.setSelectedGroup(selecteditem + "");
+        }
+
+        private void Savedgrp_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (sender is not ListBox listBox)
+            {
+                return;
+            }
+
+            var selecteditem = listBox.SelectedItem + "";
+            Console.WriteLine(selecteditem + "");
+            //pass off the selected item to the singleton
+            Connection.setSelectedGroup(selecteditem + "");
+            ListBox.SelectedIndex = -1;
+            //ListBox.IsEnabled = false;
+            ListBox.Visibility = Visibility.Collapsed;
+            ArticleBox.Visibility = Visibility.Visible;
+            Console.WriteLine(Connection.getSelectedGroup());
+
+        }
+        private void ArticleBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (sender is not ListBox listBox)
+            {
+                return;
+            }
+
+            var selecteditem = listBox.SelectedItem + "";
+            Connection.setSelectedArticle(selecteditem + "");
+            Console.WriteLine(selecteditem + "");
+            Console.WriteLine(Connection.getSelectedArticle());
+        }
+
+        private void Sort_by_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var item = Sort_by.SelectedItem as ComboBoxItem;
+            if (item?.Content+"" == "Sort by group")
+            {
+                if (ListBox.Visibility == Visibility.Collapsed)
+                {
+                    ListBox.Visibility = Visibility.Visible;
+                    ArticleBox.Visibility = Visibility.Collapsed;
+                }
+            }else if(item?.Content+"" == "Sort by article")
+            {
+                if (ListBox.Visibility == Visibility.Visible)
+                {
+                    ListBox.Visibility = Visibility.Collapsed;
+                    ArticleBox.Visibility = Visibility.Visible;
+                }
+            }
+
+
         }
     }
 }
